@@ -1,0 +1,23 @@
+<html>
+
+	<head>
+		<title> Vraboteni </title>
+	 </head>
+<body>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'contact/style3.css' %}" />
+
+<h1>{{ kompanija.ime }}</h1>
+<ol>
+{% for komp in kompanija.lice_set.all %}
+	<li> Ime: {{ komp.ime }} -- 
+	 Adresa: {{ komp.adresa }} -- 
+	 Grad: {{ komp.grad }} --
+	 Telefon: {{ komp.telefon }} --  
+	 Email: {{ komp.email }} </li>
+{% endfor %}
+</ol>
+<a href="{%url 'contact:index' %}"> Vrati se na pocetna strana</a>
+</body>
+</html>

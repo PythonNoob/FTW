@@ -1,0 +1,22 @@
+<html>
+
+	<head>
+		<title> Grupi </title>
+	 </head>
+<body>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'contact/style1.css' %}" />
+
+{% if lista_grupi %}
+	<ol>
+	{% for grupa in lista_grupi %}
+	<li><a href="{% url 'contact:kompanii' grupa.id %}"> <h2>{{grupa.oblast}}</h2> </a></li>
+	{% endfor %}
+	</ol>
+{% else %}
+	<p> Nema vneseno grupi </p>
+{% endif %}  
+
+</body>
+</html>

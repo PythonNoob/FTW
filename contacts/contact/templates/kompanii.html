@@ -1,0 +1,20 @@
+<html>
+
+	<head>
+		<title> Kompanii </title>
+	 </head>
+<body>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'contact/style2.css' %}" />
+
+<h1>{{ grupi.oblast }}</h1>
+
+<ul>
+{% for grupa in grupi.kompanija_set.all %}
+	<li> <a href="{% url 'contact:lica' grupa.id  %}"> {{ grupa.ime }} </a> -- {{grupa.opis}} </li>
+{% endfor %}
+</ul>
+<a href="{%url 'contact:index' %}"> Vrati se na pocetna strana </a>
+</body>
+</html>
